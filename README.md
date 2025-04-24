@@ -2,77 +2,73 @@
 
 Welcome! 👋  
 This is a simple DevOps-oriented project created as part of my hands-on training journey.  
-It features a basic Python Flask application integrated with a GitHub Actions CI pipeline that runs automated tests on each push or pull request.
+It features a basic Python Flask application with:
+
+- ✅ Docker containerization  
+- ✅ GitHub Actions CI pipeline with automated tests using `pytest`  
+- ✅ Deployment to Heroku  
+- ✅ Docker Compose support
 
 ## 🚀 Project Goals
-- Demonstrate basic CI/CD concepts.
-- Practice infrastructure automation using GitHub Actions.
-- Gain confidence with Git, testing, and deployment pipelines.
+- Practice containerized development and deployment
+- Demonstrate CI/CD principles using GitHub Actions
+- Build confidence with DevOps tools and workflows
 
 ## 🧰 Tech Stack
 - **Python 3.10**
 - **Flask** – minimal web framework
-- **Pytest** – for unit testing
+- **Pytest** – unit testing
 - **GitHub Actions** – CI pipeline
+- **Docker & Docker Compose** – local environment and testing
+- **Heroku** – cloud deployment
 
 ## 📁 Project Structure
 ```
-├── app.py              # Simple Flask web app
-├── test_app.py         # Basic Pytest test
-├── requirements.txt    # Python dependencies
+├── app.py                  # Flask application
+├── test_app.py             # Pytest test file
+├── requirements.txt        # Python dependencies
+├── Dockerfile              # Container setup
+├── docker-compose.yml      # Compose configuration
+├── runtime.txt             # Python version for Heroku
+├── Procfile                # Heroku process type
 └── .github/workflows/ci.yml  # GitHub Actions workflow
 ```
 
-## 🔧 Running the App Locally
+## 🔧 Running Locally
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yarinbatat/devops-ci-cd-flask.git
-   cd devops-ci-cd-flask
-   ```
+```bash
+git clone https://github.com/yarinbatat/devops-ci-cd-flask.git
+cd devops-ci-cd-flask
+```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Run the Flask app:
-   ```bash
-   python app.py
-   ```
-
-Then go to `http://localhost:5000` in your browser.
+2. Start with Docker Compose:
+```bash
+docker-compose up
+```
+Access the app at `http://localhost:5000`
 
 ## ✅ Running Tests
 
+Manually:
 ```bash
 pytest
 ```
 
-## 🤖 CI with GitHub Actions
+Or automatically (CI):
+- GitHub Actions will run `pytest` inside Docker on every push or PR to `main`
 
-Every time code is pushed to the `main` branch or a pull request is created, GitHub Actions will:
-- Checkout the code
-- Set up Python 3.10
-- Install dependencies
-- Run tests
+## 🌐 Live Demo
 
-## 🧠 What I Learned
-This project helped me understand:
-- How to build and trigger a CI pipeline using GitHub Actions
-- How to structure a Python project with tests
-- How to automate testing for better software delivery
-
----
+This app is deployed on Heroku:  
+👉 [Live App](https://yarin-devops-pipeline-73b58158304b.herokuapp.com/)
 
 ## 📌 Next Steps
-- Add Docker support (Dockerfile)
-- Set up CD to Azure / Heroku
-- Add more advanced tests and monitoring
-
----
+- Add database support (e.g., PostgreSQL with Docker Compose)
+- Add monitoring (e.g., Prometheus, Grafana)
+- Extend CI/CD with deployment steps
 
 ## 🙋‍♂️ About Me
 
 I'm Yarin Batat, an IT professional transitioning into DevOps.  
-Check out more on my [LinkedIn](https://www.linkedin.com/in/yarin-batat/) or [GitHub](https://github.com/yarinbatat).
+Check out more on my [GitHub](https://github.com/yarinbatat) or [LinkedIn](https://www.linkedin.com/in/yarin-batat/)
