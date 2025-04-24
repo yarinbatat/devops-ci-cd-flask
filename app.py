@@ -6,4 +6,5 @@ def hello():
     return "Hello from Yarin's DevOps Pipeline!"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
+
